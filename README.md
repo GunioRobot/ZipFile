@@ -61,6 +61,20 @@ Zip File Extraction Example
 		var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'test.zip');
 		f.write(this.responseData);
 		Ti.API.log('INFO',Ti.Filesystem.applicationDataDirectory);
+
+        // NOTE: Since 1.7.0 the Filesystem has been changed to return a localhost url for properties such as applicationDataDirectory.
+
+       /*
+
+       To fix this you can use :
+
+    var dataDir = Ti.Filesystem.applicationDataDirectory.slice(0,Ti.Filesystem.applicationDataDirectory.length - 1).replace('file://localhost','').replace(/%20/g,' ');
+    zipfile.extract(dataDir+'/test.zip', dataDir);
+
+
+
+       */
+
 		zipfile.extract(Ti.Filesystem.applicationDataDirectory+'/test.zip', Ti.Filesystem.applicationDataDirectory);
 	};
 	xhr.open('GET','http://dl.dropbox.com/u/1400234/test.zip');
