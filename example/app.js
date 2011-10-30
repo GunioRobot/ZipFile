@@ -1,8 +1,8 @@
 Titanium.UI.setBackgroundColor('#000');
 
-var zipfile = require("zipfile"); 
+var zipfile = require("zipfile");
 
-var win1 = Titanium.UI.createWindow({  
+var win1 = Titanium.UI.createWindow({
     title:'ZipFile test',
     backgroundColor:'#fff'
 });

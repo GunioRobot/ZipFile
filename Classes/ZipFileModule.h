@@ -1,6 +1,6 @@
 /**
  * Originally by TermiT from https://github.com/TermiT/ZipFile
- * Updated for Ti SDK 1.7.0 and fixed deprecated functions in minizip 
+ * Updated for Ti SDK 1.7.0 and fixed deprecated functions in minizip
  * by Kosso : http://kosso.co.uk
  *
  * Appcelerator Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc.
@@ -9,7 +9,7 @@
 #import "TiModule.h"
 #import "ZipArchive.h"
 
-@interface ZipfileModule : TiModule 
+@interface ZipfileModule : TiModule
 {
 }
 

@@ -32,7 +32,7 @@
 	// this method is called when the module is first loaded
 	// you *must* call the superclass
 	[super startup];
-	
+
 	NSLog(@"[INFO] %@ loaded",self);
 }
 
@@ -41,12 +41,12 @@
 	// this method is called when the module is being unloaded
 	// typically this is during shutdown. make sure you don't do too
 	// much processing here or the app will be quit forcibly
-	
+
 	// you *must* call the superclass
 	[super shutdown:sender];
 }
 
-#pragma mark Cleanup 
+#pragma mark Cleanup
 
 -(void)dealloc
 {
@@ -69,7 +69,7 @@
 {
 	//if (count == 1 && [type isEqualToString:@"my_event"])
 	//{
-		// the first (of potentially many) listener is being added 
+		// the first (of potentially many) listener is being added
 		// for event named 'my_event'
 	//}
 }
@@ -92,11 +92,11 @@
 	NSString *path = [args objectAtIndex:1];
 
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	
+
 	if(![fileManager fileExistsAtPath:file]) {
 		NSLog(@"[DEBUG] Can't find zip file");
 	}
-	
+
 	ZipArchive *zipArchive = [[ZipArchive alloc] init];
 	if([zipArchive UnzipOpenFile:file]) {
 		NSLog(@"[DEBUG] zip opened");
@@ -113,7 +113,7 @@
 	} else  {
 		NSLog(@"[DEBUG] can't open zip");
 	}
-	[zipArchive release];	
+	[zipArchive release];
 }
 
 
@@ -156,7 +156,7 @@
             [zipArchive release];
             zipArchive = nil;
             return nil;
-        }            
+        }
     }
     return self;
 }
@@ -173,7 +173,7 @@
             [zipArchive release];
             zipArchive = nil;
             return nil;
-        }            
+        }
     }
     return self;
 }
@@ -183,7 +183,7 @@
 {
     NSString *path = [args objectAtIndex:0];
     NSString *newName = [args objectAtIndex:1];
-	
+
     //NSLog(@"[DEBUG] add %@ to zip as %@", path, newName);
     return NUMBOOL([zipArchive addFileToZip:path newname:newName]);
 }
